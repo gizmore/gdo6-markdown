@@ -12,7 +12,7 @@ final class Decoder
     
     public function decoded()
     {
-        
+        return $this->message; # @TODO: Implement a markdown decoder.
     }
     
 }
