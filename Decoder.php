@@ -1,6 +1,8 @@
 <?php
 namespace GDO\Markdown;
 
+use cebe\markdown\GithubMarkdown;
+
 final class Decoder
 {
     private $message;
@@ -12,7 +14,8 @@ final class Decoder
     
     public function decoded()
     {
-        return $this->message; # @TODO: Implement a markdown decoder.
+        $parser = new GithubMarkdown();
+        return $parser->parse($this->message);
     }
     
 }
