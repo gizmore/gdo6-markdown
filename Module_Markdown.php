@@ -2,6 +2,7 @@
 namespace GDO\Markdown;
 
 use GDO\Core\GDO_Module;
+use GDO\Core\GDT_Array;
 use GDO\Core\Module_Core;
 use GDO\UI\GDT_Message;
 use GDO\Util\Strings;
@@ -44,6 +45,11 @@ final class Module_Markdown extends GDO_Module
         $min = Module_Core::instance()->cfgMinifyJS() === 'no' ? '' : '.min';
         $this->addBowerJavascript("editor.md/editormd{$min}.js");
         $this->addJavascript('js/gdo6-markdown.js');
+    }
+    
+    public function hookIgnoreDocsFiles(GDT_Array $ignore)
+    {
+        $ignore->data[] = 'GDO/Markdown/markdown/**/*';
     }
     
 }
