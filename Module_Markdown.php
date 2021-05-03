@@ -3,9 +3,9 @@ namespace GDO\Markdown;
 
 use GDO\Core\GDO_Module;
 use GDO\Core\GDT_Array;
-use GDO\Core\Module_Core;
 use GDO\UI\GDT_Message;
 use GDO\Util\Strings;
+use GDO\Javascript\Module_Javascript;
 
 /**
  * Markdown editor for gdo6.
@@ -42,7 +42,7 @@ final class Module_Markdown extends GDO_Module
     
     public function onIncludeScripts()
     {
-        $min = Module_Core::instance()->cfgMinifyJS() === 'no' ? '' : '.min';
+        $min = Module_Javascript::instance()->jsMinAppend();
         $this->addBowerJavascript("editor.md/editormd{$min}.js");
         $this->addJavascript('js/gdo6-markdown.js');
     }
