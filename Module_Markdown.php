@@ -10,8 +10,8 @@ use GDO\Javascript\Module_Javascript;
 /**
  * Markdown editor for gdo6.
  * @author gizmore
- * @version 6.10
- * @since 6.10
+ * @version 6.10.2
+ * @since 6.10.1
  */
 final class Module_Markdown extends GDO_Module
 {
@@ -34,7 +34,6 @@ final class Module_Markdown extends GDO_Module
         if (Strings::startsWith($class, 'cebe'))
         {
             $path = str_replace('\\', '/', $class);
-            $path = Strings::
             $path = $this->filePath('markdown/'.$class);
             require_once $path;
         }
