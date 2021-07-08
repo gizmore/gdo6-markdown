@@ -20,6 +20,7 @@ final class Module_Markdown extends GDO_Module
     public function onInit()
     {
         GDT_Message::$DECODER = [self::class, 'decode'];
+        GDT_Message::$EDITOR_NAME = 'Markdown';
         spl_autoload_register([$this, 'autoloadMarkdown']);
     }
 
