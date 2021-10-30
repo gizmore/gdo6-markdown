@@ -3,5 +3,8 @@
 }
 
 .wysiwyg.editormd {
-	min-height: 20rem;
+	min-height: 32rem;
+	max-height: 48rem;
+	height: 50vh;
+	width: 100%;
 }
