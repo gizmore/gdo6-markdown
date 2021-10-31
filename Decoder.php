@@ -14,7 +14,11 @@ final class Decoder
     
     public function decoded()
     {
-        $parser = new GithubMarkdown();
+    	static $parser;
+    	if ($parser === null)
+    	{
+    		$parser = new GithubMarkdown();
+    	}
         return $parser->parse($this->message);
     }
     
