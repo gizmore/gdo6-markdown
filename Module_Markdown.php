@@ -80,8 +80,8 @@ final class Module_Markdown extends GDO_Module
         if ($this->cfgJSEditor())
         {
             $min = Module_Javascript::instance()->jsMinAppend();
-            $this->addBowerJavascript("editor.md/editormd{$min}.js");
-            $this->addJavascript('js/gdo6-markdown.js');
+            $this->addBowerJS("editor.md/editormd{$min}.js");
+            $this->addJS('js/gdo6-markdown.js');
         }
         $this->addBowerCSS("editor.md/css/editormd{$min}.css");
         $this->addCSS('css/gdo6-markdown.css');
@@ -90,10 +90,10 @@ final class Module_Markdown extends GDO_Module
         switch (Trans::$ISO)
         {
             case 'de':
-                $this->addJavascript('js/editor.md_de.js');
+                $this->addJS('js/editor.md_de.js');
                 break;
             default:
-                $this->addBowerJavascript("editor.md/languages/en.js");
+                $this->addBowerJS("editor.md/languages/en.js");
                 break;
         }
     }
