@@ -66,7 +66,7 @@ final class Module_Markdown extends GDO_Module
 	
 	public function autoloadMarkdown($class)
 	{
-		if (Strings::startsWith($class, 'cebe\\markdown\\'))
+		if (str_starts_with($class, 'cebe\\markdown\\'))
 		{
 			$class = Strings::substrFrom($class, 'cebe\\markdown\\');
 			$class = str_replace('\\', '/', $class) . '.php';
@@ -77,7 +77,7 @@ final class Module_Markdown extends GDO_Module
 	
 	public function onIncludeScripts()
 	{
-		$min = Module_Javascript::instance()->jsMinAppend();
+		$min = Module_Javascript::instance()->cfgMinAppend();
 		if ($this->cfgJSEditor())
 		{
 			$this->addBowerJS("editor.md/editormd{$min}.js");
